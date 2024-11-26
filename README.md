@@ -1,1 +1,1 @@
-# Java-Script-learning
+# Java-Script-lessons
