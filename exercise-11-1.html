@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exercise-11</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+
+
+
+
+</div>
+
+
+
+
+  <script>
+    const nums=[10,20,30];
+    nums[2]=99;
+    console.log(nums);
+
+    const arr=[1,20,22,24,5];
+    const arr2=['hi','hello','good'];
+
+    function getLastValue(Arr){
+      console.log(Arr[Arr.length-1]);
+    }
+
+    function arraySwapFull(Array){
+      const swappedArray=[];
+      for (let i=Array.length-1;i>=0;i--){
+        let element=Array[i];
+        swappedArray.push(element);
+      }
+      console.log(swappedArray);
+    }
+
+    function arraySwapFull(Array){
+      let temp='';
+      temp=Array[Array.length-1];
+      Array[Array.length-1]=Array[0];
+      Array[0]=temp;
+      console.log(Array);
+    }
+
+
+    getLastValue(arr);
+    getLastValue(arr2);
+    arraySwapFull(arr);
+    arraySwapFull(arr2);
+    arraySwapFull(arr);
+    arraySwapFull(arr2);
+
+
+    //part 2--11d
+    for(i=0;i<=10;i++){
+      if(i%2==0){
+        console.log(i);
+      }
+    };
+
+    
+    for(i=5;i>=0;i--){
+      console.log(i);
+    };
+
+    let j=0;
+    while(j<=10){
+      if(j%2==0){
+        console.log(j);
+      }
+      j++;
+    };
+
+    function addOne(arr){
+      const addoneArray=[];
+      for(let i=0;i<arr.length;i++){
+        const addOneElement=arr[i]+1;
+        addoneArray.push(addOneElement);
+      }
+      console.log(addoneArray);
+    };
+
+    addOne(arr);
+
+    function addNum(array,nums){
+      const addoneArray=[];
+      for(let i=0;i<arr.length;i++){
+        const addOneElement=arr[i]+nums;
+        addoneArray.push(addOneElement);
+      }
+      console.log(addoneArray);
+    }
+
+addNum(arr,2);
+
+function addArrays(array1,array2){
+      const addoneArray=[];
+      for(let i=0;i<arr.length;i++){
+        const addOneElement=array2[i]+array1[i];
+        addoneArray.push(addOneElement);
+      }
+      console.log(addoneArray);
+    }
+  
+const arr3=[3,7,9,8,4];
+addArrays(arr,arr3);
+
+function countPositiveNumbers(arr){
+  let count=0;
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]>0){
+      count++;
+    }else{
+      count=count;
+    }
+  }
+  console.log(count);
+}
+
+const arr4=[-1,2,3,-5,-9,0,6]
+countPositiveNumbers(arr4);
+
+function minMax(arr) {
+  if (!arr || arr.length === 0) {
+    console.log("Array is empty or undefined");
+    return;
+  }
+
+  let min = arr[0];
+  let max = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+
+  console.log(`min: ${min}`);
+  console.log(`max: ${max}`);
+}
+
+// Test the function
+//const arr = [3, 5, 1, 8, -2, 7];
+//const arr3 = [10, 20, 30, 0, -10, 50];
+
+minMax(arr);  // Expected: min: -2, max: 8
+minMax(arr3); // Expected: min: -10, max: 50
+/*
+function countWords(arr){
+  const countArray = [
+  {
+    name: '',
+    count: 0,
+  }
+];
+countArray.name=arr[0]
+const finalArray=[];
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]==countArray.name){
+      countArray.count++;
+
+    }else{
+      countArray.count=countArray.count;
+    }
+  }
+}*/
+
+function countWords(arr) {
+        const result = {};
+
+        for (let i = 0; i < arr.length; i++) {
+          const word = arr[i];
+
+          // result[word] adds/accesses a property using whatever is
+          // saved inside the 'word' variable.
+          // If word = 'apple', result[word] will do result['apple']
+          // If word = 'grape', result[word] will do result['grape']
+          if (!result[word]) {
+            result[word] = 1;
+          } else {
+            result[word]++;
+          }
+        }
+
+        return result;
+      }
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+
+  </script>
+</body>
+</html>

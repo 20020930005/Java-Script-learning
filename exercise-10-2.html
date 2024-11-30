@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        background-color: black;
+        color: white;
+        font-family: Arial;
+        
+      }
+
+      .cal-button{
+        background-color: #353535;
+        border: none;
+        height: 60px;
+        width:60px;
+        border-radius: 50px;
+        color: white;
+        font-size: 25px;
+        margin-left: 10px;
+
+      }
+
+      .cal-button-clear{
+        background-color: #353535;
+        border: none;
+        height: 60px;
+        width:60px;
+        border-radius: 50px;
+        color: white;
+        font-size: 18px;
+        margin-left: 10px;
+
+      }
+
+      .cal-button-side{
+        background-color:orange;
+        border: none;
+        height: 60px;
+        width:60px;
+        border-radius: 50px;
+        color: white;
+        font-size: 25px;
+        margin-left: 10px;
+       
+      }
+
+      .css-ans{
+        font-weight: bold;
+        color: white;
+        font-size: 40px;
+        margin-left: 25px;
+      }
+
+      .calculator{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 20px;
+      border: 2px solid white; 
+      border-radius: 10px; 
+      width: 80%; 
+      max-width: 500px; 
+      height: 600px;
+      box-sizing: border-box; 
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+    <div class="calculator">
+    <!-- Code changes are at the bottom. -->
+
+    <p class="js-showCalculations css-ans"></p>
+    <p>
+      <button onclick="
+        updateCalculation('1');
+      " class="cal-button">1</button>
+
+      <button onclick="
+        updateCalculation('2');
+      " class="cal-button">2</button>
+
+      <button onclick="
+        updateCalculation('3');
+      " class="cal-button">3</button>
+
+      <button onclick="
+        updateCalculation(' + ');
+      "class="cal-button-side">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('4');
+      " class="cal-button">4</button>
+
+      <button onclick="
+        updateCalculation('5');
+      " class="cal-button">5</button>
+
+      <button onclick="
+        updateCalculation('6');
+      "class="cal-button">6</button>
+
+      <button onclick="
+        updateCalculation(' - ');
+      "class="cal-button-side">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('7');
+      "class="cal-button">7</button>
+
+      <button onclick="
+        updateCalculation('8');
+      "class="cal-button">8</button>
+
+      <button onclick="
+        updateCalculation('9');
+      "class="cal-button">9</button>
+
+      <button onclick="
+        updateCalculation(' * ');
+      "class="cal-button-side">*</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('0');
+      "class="cal-button">0</button>
+
+      <button onclick="
+        updateCalculation('.');
+      "class="cal-button">.</button>
+
+      <button onclick="
+        
+        calculation = eval(calculation);
+        document.querySelector('.js-showCalculations').innerHTML=calculation;
+
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+      " class="cal-button">=</button>
+
+      <button onclick="
+        updateCalculation(' / ');
+      "class="cal-button-side">/</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation = '';
+        document.querySelector('.js-showCalculations').innerHTML=calculation;
+
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+      "class="cal-button-clear">Clear</button>
+    </p>
+  </div>
+    
+
+    <script>
+      let calculation = localStorage.getItem('calculation') || '';
+
+      function updateCalculation(value) {
+        calculation += value;
+        document.querySelector('.js-showCalculations').innerHTML=calculation;
+        
+        localStorage.setItem('calculation', calculation);
+      }
+
+      // Optional: you can also create a function in order
+      // to reuse this code.
+      function saveCalculation() {
+        localStorage.setItem('calculation', calculation);
+      }
+    </script>
+  </body>
+</html>

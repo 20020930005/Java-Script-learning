@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<head>
+  <title>Exersice 1</title>
+
+  <style>
+    .b1{
+      background-color: rgb(236, 236, 73);
+      border: none;
+      padding: 10px 35px;
+      border-radius: 50px;
+      cursor: pointer;
+
+    }
+    .game-button{
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .game-button1{
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .game-button2{
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+
+    .is-toggled{
+      background-color: white;
+      color: black;
+    }
+
+    .cost-input{
+      font-size: 15px;
+      /*
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;*/
+      padding:10px;
+    }
+
+    .calculate-button{
+      font-size: 15px;
+      padding: 12px 15px;
+      background-color: green;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .js-error-message{
+      color: red;
+    }
+    
+  </style>
+
+</head>
+
+<body>
+  
+  <button class="b1" >
+    Add to Cart
+  </button>
+
+  <button class="js-button">
+    Test
+  </button>
+<br><br>
+
+<button class="game-button" onclick="
+buttonChange();
+">
+  Gaming
+</button>
+
+
+<button class="game-button1" onclick="
+buttonChange1();
+">
+  Music
+</button>
+
+<button class="game-button2" onclick="
+buttonChange2();
+">
+  Tech
+</button>
+
+<!--part 2-->
+<h2>Amazone Shipping Calculator</h2>
+  <p>Orders under $40=+$10 shipping</p>
+  <p>oders over $40=Free shipping.</p>
+
+  <p>
+    <input class="js-cal-input cost-input" placeholder="Cost of order"
+    
+    onkeydown="
+    handleCostKeyDown(event); 
+    
+      ">
+    <button class="js-cal-button calculate-button" onclick="
+    shippingCalculator();
+    ">Calculate</button>
+    <p class="js-total-value css-tot-value" ></p>
+
+    <p class="js-error-message"></p>
+  </p>
+
+ 
+<script>
+  const test=document.querySelector('.js-button');
+
+  console.log(test.classList.contains('js-button'))
+
+  function buttonChange(){
+    const buttonNature=document.querySelector('.game-button');
+    let check=buttonNature.classList.contains('is-toggled');
+
+    if(check==true){
+      buttonNature.classList.remove('is-toggled');
+    }else{
+      buttonNature.classList.add('is-toggled');
+    }
+  };
+
+  function buttonChange1(){
+    const buttonNature=document.querySelector('.game-button1');
+    let check=buttonNature.classList.contains('is-toggled');
+
+    if(check==true){
+      buttonNature.classList.remove('is-toggled');
+    }else{
+      buttonNature.classList.add('is-toggled');
+    }
+  };
+
+  function buttonChange2(){
+    const buttonNature=document.querySelector('.game-button2');
+    let check=buttonNature.classList.contains('is-toggled');
+
+    if(check==true){
+      buttonNature.classList.remove('is-toggled');
+    }else{
+      buttonNature.classList.add('is-toggled');
+    }
+  };
+
+  //part 2
+
+  
+    
+    
+    function handleCostKeyDown(event){
+      if(event.key=='Enter'){
+      shippingCalculator();
+    }else if(event.key<0){
+      handleOnKeyUp();
+    }
+      
+    }
+    function shippingCalculator(){
+    const enteredValue=document.querySelector('.js-cal-input');
+    
+   let cost=Number(enteredValue.value) ;
+
+   if(cost<0){
+    document.querySelector('.js-error-message')
+            .innerHTML = 'Error: cost cannot be less than $0';
+
+    return;
+   }else{
+    document.querySelector('.js-error-message').classList.remove('js-error-message');
+   }
+
+    if (cost <40){
+      cost+=10;
+      document.querySelector('.js-total-value').innerHTML=`$${cost}`;
+    }else{
+      document.querySelector('.js-total-value').innerHTML=`$${cost}`;
+    }
+  };
+
+ 
+
+</script>
+
+</body>
+
+
+
+
+</html>

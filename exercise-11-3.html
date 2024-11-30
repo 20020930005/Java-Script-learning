@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exercise-11-3</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+
+
+
+
+
+<script>
+  function fizzBuzz(){
+    for(let i=1;i<=20;i++){
+      if(i%3==0 && i%5==0){
+        console.log("Fizz Buzz");
+      }
+      else if(i%3==0){
+        console.log("Fizz")
+      }else if(i%5==0){
+        console.log("Buzz");
+      }else{
+        console.log(i);
+      }
+    }
+  }
+
+  fizzBuzz();
+
+  arr1=['san','mez','san','neth','neth','up'];
+
+  function Unique(arr){
+    let uniqarr=[];
+    uniqarr[0]=arr[0];
+    for(let i=0;i<arr.length;i++){
+      
+      if(uniqarr.findIndex(val=>val==arr[i])===-1){
+        uniqarr.push(arr[i]);
+      }
+    }
+    console.log(uniqarr);
+  }
+Unique(arr1);
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

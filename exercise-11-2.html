@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exercise-11-2</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+
+
+
+
+
+<script>
+
+  const arr=['hello','world','search','good','search']
+  const arr1=['not','found']
+  let found=false;
+
+  function arraycheck(arr){
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]==='search'){
+      console.log(i);
+      found=true;
+      break;
+    }  
+  }
+  if(!found){
+  console.log(-1);}
+}
+function arraycheckWord(arr,word){
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]===word){
+      console.log(i);
+      found=true;
+      break;
+    }  
+  }
+  if(!found){
+  console.log(-1);}
+}
+
+let arr4=['egg','apple','mango','egg','banana','egg']
+function removeEgg(arrFood){
+  
+  let count=0;
+  let arr3=[];
+ for(let i=0;i<arrFood.length;i++){
+  if(arrFood[i]==="egg"){
+    
+    count++;
+    if(count<=2){
+      continue;
+    }
+  }
+  arr3.push(arrFood[i]);
+  
+ }
+ console.log(arr3);
+}
+
+function removeEggReverse(arrFood){
+  const copy=arrFood.splice(0,arrFood.length);
+  const reverseArrFood=copy.reverse();
+  let count=0;
+  let arr3=[];
+ for(let i=0;i<reverseArrFood.length;i++){
+  if(reverseArrFood[i]==="egg"){
+    
+    count++;
+    if(count<=2){
+      continue;
+    }
+  }
+  arr3.push(reverseArrFood[i]);
+  
+ }
+ console.log(arr3.reverse());
+}
+arraycheck(arr);
+arraycheck(arr1);
+arraycheckWord(arr,'good');
+removeEgg(arr4);
+removeEggReverse(arr4);
+console.log(arr4);
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

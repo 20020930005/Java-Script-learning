@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<title>DOM-project
+</title>
+  
+
+
+</head>
+
+<body>
+
+  
+
+  <h2>Amazone Shipping Calculator</h2>
+  <p>Orders under $40=+$10 shipping</p>
+  <p>oders over $40=Free shipping.</p>
+
+  <p>
+    <input class="js-cal-input" placeholder="Cost of order" onkeydown="
+    handleCostKeyDown(event);
+    
+      ">
+    <button class="js-cal-button" onclick="
+    shippingCalculator();
+    ">calculate</button>
+    <p class="js-total-value"></p>
+  </p>
+
+
+
+  <script>
+
+    String(25)
+    console.log('25'-5)
+    //dont need to type window
+    window.console.log('window')
+    
+    function handleCostKeyDown(event){
+      if(event.key=='Enter'){
+      shippingCalculator();
+    }
+      
+    }
+    function shippingCalculator(){
+    const enteredValue=document.querySelector('.js-cal-input');
+    
+   let cost=Number(enteredValue.value) ;
+
+    if (cost <40){
+      cost+=10;
+      document.querySelector('.js-total-value').innerHTML=`$${cost.toFixed(2)}`;
+    }else{
+      document.querySelector('.js-total-value').innerHTML=`$${cost.toFixed(2)}`;
+    }
+  };
+
+
+    
+
+  </script>
+</body>
+
+</html>

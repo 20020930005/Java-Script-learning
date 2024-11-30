@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+<title>ex-09-1</title>
+</head>
+
+<body>
+
+  <button class="js-button1">9a</button>
+  <!--part 2-->
+  <button class="js-button2">9b</button><br><br>
+  <button class="js-head-button" onclick="
+  results('head');
+  ">heads</button>
+  <button class="js-tail-button" onclick="
+  results('tail');
+  ">tails</button>
+  <p class="js-result-button"></p><br><br><br>
+
+  <!--part 3-->
+  <input class="js-name-input" placeholder="enter your name" onkeydown="
+  handleSubmit(event);
+  ">
+  <button class="js-submit-button" onclick="
+  giveName();
+  ">Submit</button>
+  <p class="js-answer-name"></p>
+
+  <!--part 4-->
+  <input class="js-onkeytype-input" placeholder="Type here" onkeyup="
+  settingOnkeyup();
+  ">
+
+  <p class="js-onkeyup"></p>
+
+
+  <script>
+    //part 4
+
+    function settingOnkeyup(){
+      let typingWord=document.querySelector('.js-onkeytype-input').value;
+
+      document.querySelector('.js-onkeyup').innerHTML=typingWord;
+    }
+
+
+
+    //part1
+    console.log(document.querySelector('.js-button1'));
+    document.querySelector('.js-button2').innerHTML='9b done!';
+
+    console.log(document.querySelector('.js-button2').innerHTML);
+
+    //part 2
+
+    function results(input){
+      if(input=='heads'){
+        document.querySelector('.js-result-button').innerHTML=`You chose:${input}`;
+      }else{
+        document.querySelector('.js-result-button').innerHTML=`You chose:${input}`;
+      }
+    }
+
+    //part 3
+    
+
+    function giveName(){
+      let name=document.querySelector('.js-name-input').value;
+      
+      document.querySelector('.js-answer-name').innerHTML=`Your name is:${name}`;
+    }
+
+    function handleSubmit(event){
+      if(event.key=='Enter'){
+        giveName();
+      }
+    }
+
+  </script>
+
+
+</body>
+
+
+</html>
